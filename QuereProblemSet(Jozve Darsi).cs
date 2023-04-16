@@ -1,56 +1,52 @@
-﻿using System;
+﻿
+// input:
+// 2
+// 11 5 6 5
+// output:
+// 5 11
 
-namespace HelloWorld
+// input:
+// 6
+// 1 2 3 6 4 5 6 21 
+// output:
+// 6 21
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Quera
 {
   class Program
   {
     static void Main(string[] args)
     {
+        string NumSessions = Console.ReadLine();
+        string SizeSessions = Console.ReadLine();
+        int[] IntSizeSessions = new int[SizeSessions.Length];
 
-        string a = Console.ReadLine();
-        string b = Console.ReadLine();
-        string[] array = new string[30];
-        int[] array1 = new int [30];
-        char c = ' ';
-        int j = 0;
+        string[] ChangedSizeSessions = SizeSessions.Split(' ');
 
-        for (int i = 0; i < b.Length; i++)
+        for (int i = 0; i < ChangedSizeSessions.Length; i++)
         {
-           
-           if(b[j] == c)
-           j++;
-
-          if(b[j] != c){
-            array[j] = Convert.ToString(b[j]);
-            if (j+1 == b.Length)
-                    break;
-
-            if(j+1 <= b.Length-1)
-              j++;
-
-            if(b[j] != c){
-                array[j-1] = array[j-1] + b[j];
-                j++;
-              }
-              if (j == b.Length)
-                    break;
-
-          }
-           
-           
+          if(ChangedSizeSessions[i] == "")
+          ChangedSizeSessions[i] = "0";
+          IntSizeSessions[i] = Convert.ToInt32(ChangedSizeSessions[i]);
         }
 
-          for (int i = 0; i < array1.Length; i++)
-             array1[i] = Convert.ToInt32(array[i]);
-        
-        Array.Sort(array1);
-        int sum = array1.Sum();
-        int final = array1[29];
-        int mid = sum - (2*final);
+        //  for (int i = 0; i < IntSizeSessions.Length; i++)
+        // {
+        //   System.Console.WriteLine(IntSizeSessions[i]);
+        // }
 
-        System.Console.WriteLine(mid +" "+final);
-        
+        Array.Sort(IntSizeSessions);
+        int Sum = IntSizeSessions.Sum();
+        int Final = IntSizeSessions[IntSizeSessions.Length-1];
+        int Mid = Sum - (2*Final);
 
+        Console.WriteLine(Mid +" "+ Final);  
     }
   }
 }
