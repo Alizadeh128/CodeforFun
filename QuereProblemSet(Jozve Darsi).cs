@@ -1,4 +1,5 @@
-﻿
+﻿//https://quera.org/problemset/175189/
+
 // input:
 // 2
 // 11 5 6 5
