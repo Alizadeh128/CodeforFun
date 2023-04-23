@@ -26,7 +26,7 @@ namespace Quera
     {
         string NumSessions = Console.ReadLine();
         string SizeSessions = Console.ReadLine();
-        int[] IntSizeSessions = new int[SizeSessions.Length];
+        Double[] DoubleSizeSessions = new Double[SizeSessions.Length];
 
         string[] ChangedSizeSessions = SizeSessions.Split(' ');
 
@@ -34,7 +34,7 @@ namespace Quera
         {
           if(ChangedSizeSessions[i] == "")
           ChangedSizeSessions[i] = "0";
-          IntSizeSessions[i] = Convert.ToInt32(ChangedSizeSessions[i]);
+          DoubleSizeSessions[i] = Convert.ToInt32(ChangedSizeSessions[i]);
         }
 
         //  for (int i = 0; i < IntSizeSessions.Length; i++)
@@ -42,10 +42,10 @@ namespace Quera
         //   System.Console.WriteLine(IntSizeSessions[i]);
         // }
 
-        Array.Sort(IntSizeSessions);
-        int Sum = IntSizeSessions.Sum();
-        int Final = IntSizeSessions[IntSizeSessions.Length-1];
-        int Mid = Sum - (2*Final);
+        Array.Sort(DoubleSizeSessions);
+        Double Sum = DoubleSizeSessions.Sum();
+        Double Final = DoubleSizeSessions[DoubleSizeSessions.Length-1];
+        Double Mid = Sum - (2*Final);
 
         Console.WriteLine(Mid +" "+ Final);  
     }
