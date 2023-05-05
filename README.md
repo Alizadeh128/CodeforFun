@@ -1,2 +1,2 @@
 # CodeforFun
-This repository is for my free time coding
+This Repository is My Free Time Coding
